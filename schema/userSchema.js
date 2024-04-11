@@ -16,6 +16,18 @@ const userSchema = new mongoose.Schema({
     required: [true, "A user most have username"],
     unique: true,
   },
+  grade: {
+    type: String,
+  },
+  rule: {
+    type: String,
+  },
+  apples: {
+    type: String,
+  },
+  rewards: {
+    type: String,
+  },
   email: {
     type: String,
     required: [true, "A user most have email address"],
@@ -41,4 +53,4 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-exports.userSchema = userSchema
+exports.userSchema = userSchema;
