@@ -26,3 +26,5 @@ const requestSchema = new mongoose.Schema({
     default : false,
   }
 });
+
+exports.requestSchema = requestSchema
