@@ -51,6 +51,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  token: {
+    type: Number,
+    default: 0,
+  },
 });
 
 exports.userSchema = userSchema;
