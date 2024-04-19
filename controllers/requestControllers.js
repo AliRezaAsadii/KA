@@ -44,6 +44,23 @@ exports.createRequest = async (req, res) => {
   }
 };
 
-exports.updateRequest = async (req, res) => {};
+exports.updateRequest = async (req, res) => {
+  try {
+    const request = await Request.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.status(200).json({
+      status: "success",
+      requestAt: req.requestTime,
+      data: {
+        request,
+      },
+    });
+  } catch (err) {
+    res.status(404).send(err);
+  }
+};
 
 exports.deleteRequest = async (req, res) => {};
