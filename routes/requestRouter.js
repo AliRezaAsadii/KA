@@ -15,3 +15,5 @@ router
   .get(requestController.getRequest)
   .patch(requestController.updateRequest)
   .delete(requestController.deleteRequest);
+
+module.exports = router;
