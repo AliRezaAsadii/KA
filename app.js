@@ -3,6 +3,7 @@
 const express = require("express");
 
 const userRouter = require("./routes/userRouter");
+const requestRouter = require("./routes/requestRouter");
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/ka/users", userRouter);
+app.use("/ka/request", requestRouter);
 
 module.exports = app;
