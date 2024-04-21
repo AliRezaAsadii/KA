@@ -65,4 +65,16 @@ exports.updateReward = async (req, res) => {
   }
 };
 
-exports.deleteReward = async (req, res) => {};
+exports.deleteReward = async (req, res) => {
+  try {
+    await Reward.findByIdAndDelete(req.params.id);
+
+    res.status(204).json({
+      status: "success",
+      requestAt: req.requestTime,
+      massage: "successful",
+    });
+  } catch {
+    res.status(400).send(err);
+  }
+};
