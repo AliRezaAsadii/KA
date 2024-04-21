@@ -16,7 +16,18 @@ exports.getAllReward = async (req, res) => {
   }
 };
 
-exports.getReward = async (req, res) => {};
+exports.getReward = async (req, res) => {
+  try {
+    const reward = await Reward.findById(req.params.id);
+
+    res.status(200).json({
+      status: "success",
+      data: reward,
+    });
+  } catch (err) {
+    res.status(404).send(err);
+  }
+};
 
 exports.createReward = async (req, res) => {
   const newReward = await Reward.create(req.body);
