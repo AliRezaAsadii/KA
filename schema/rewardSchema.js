@@ -16,7 +16,7 @@ const rewardSchema = new mongoose.Schema({
     required: [true, "A request most have title"],
   },
   paidToken: {
-    type: String,
+    type: Number,
     required: [true],
   },
   requestDate: {
